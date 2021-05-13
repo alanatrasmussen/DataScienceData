@@ -77,27 +77,9 @@ cd ..
 pwd
 # code ~/.bashrc
 
-echo 'export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64'  >> ~/.profile 
-echo 'export HADOOP_HOME=$HOME/hadoop-3.3.0'  >> ~/.profile 
-echo 'export PATH=$PATH:$HADOOP_HOME/bin'  >> ~/.profile 
-echo 'export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop'  >> ~/.profile 
-echo 'export PATH=${JAVA_HOME}/bin:${PATH}' >> ~/.profile
-echo 'export HADOOP_CLASSPATH=${JAVA_HOME}/lib/tools.jar'  >> ~/.profile 
-
-
-source ~/.profile
-
-# -----------------
-# Start it up
-
-hdfs namenode –format
-$HADOOP_HOME/sbin/start-all.sh
-cd ~/hadoop-3.3.0
-hdfs dfs -mkdir /user
-hdfs dfs -mkdir /user/$(whoami)
-hdfs dfs -mkdir /user/$(whoami)/input
-hdfs dfs -mkdir /user/$(whoami)/output
-hdfs dfs -ls /user
-
-# ----------------
-# look at http://localhost:8088
+echo 'JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64'  >> ~/.profile 
+echo 'HADOOP_HOME=$HOME/hadoop-3.3.0'  >> ~/.profile 
+echo 'PATH=$PATH:$HADOOP_HOME/bin'  >> ~/.profile 
+echo 'HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop'  >> ~/.profile 
+echo 'PATH=${JAVA_HOME}/bin:${PATH}' >> ~/.profile
+echo 'HADOOP_CLASSPATH=${JAVA_HOME}/lib/tools.jar'  >> ~/.profile 
