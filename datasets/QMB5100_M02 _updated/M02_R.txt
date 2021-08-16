@@ -1,0 +1,40 @@
+
+FILE = "C:/M02/iris.csv"
+
+df = read.csv( FILE )
+
+head( df )
+tail( df )
+
+
+r = nrow( df )
+c = ncol( df )
+cn = colnames( df )
+
+
+r1 = df[1:3,]
+r2 = df[c(1,2,3),]
+
+
+c1 = df[,1:3]
+c2 = df[,c(1,2,3)]
+
+c3 = df["Species"]
+c4 = df$Species
+
+
+
+t = table( df$Species )
+m = mean( df$SepalLength )
+
+
+
+List_A = df[ which( df$Species == "Setosa" & df$SepalLength > 50) ,  ]
+
+List_B = df[ which( df$Species == "Versicolor" & df$SepalLength > 60),  ]
+
+List_C = df[ which( df$Species == "Virginica" & df$SepalLength > 70) ,  ]
+
+
+
+

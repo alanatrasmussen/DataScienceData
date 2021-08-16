@@ -1,0 +1,47 @@
+
+FILE = "C:/Dropbox/N_RASMUSSEN/xQMB5100/LECTURE/M02/train.csv"
+
+df = read.csv( FILE )
+
+
+head( df )
+tail( df )
+
+
+
+
+
+
+
+r = nrow( df )
+c = ncol( df )
+cn = colnames( df )
+
+
+
+mean( df$Age, na.rm=TRUE )
+aggregate(df$Age, by=list(Sex=df$Sex), mean, na.rm=TRUE)
+
+
+
+r1 = df[1:3, ]
+r2 = df[c(1,2,3), ]
+
+
+c1 = df[,1:3]
+c2 = df[,c(1,2,3)]
+
+c3 = df["Sex"]
+c4 = df$Sex
+
+
+
+
+t = table( df$Pclass )
+m = mean( df$Age, na.rm=TRUE )
+
+
+
+List_A = df[ which( df$Pclass == 1 & df$Age > 50) ,  ]
+
+
